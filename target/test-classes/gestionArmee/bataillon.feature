@@ -12,7 +12,7 @@ Feature: US_001 Assignation à un régiment
   When  lorsqu il fait partie d un Regiment
   Then  un Regiment lui est assigne
   
-  Scenario Outline: Transfert vers un autre Regiment
+  Scenario: Transfert vers un autre Regiment
   Given un Humain veut changer de Regiment
   When  son Regiment n existe plus ou si il se fait transférer
   Then  un autre Regiment lui est assigné
