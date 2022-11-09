@@ -15,7 +15,7 @@ Feature: US_002 Recrutement des soldats
   Scenario Outline: Un humain atteint la majorité
   Given l armee appelle les Humains à devenir Soldat
   When  un Humain atteint un <age> lui procurant la majorité
-  Then  il obtient la <fonction> de Soldat.
+  Then  il obtient la fonction <fonction> de Soldat.
   
   Examples: 
   | age			| fonction 	|

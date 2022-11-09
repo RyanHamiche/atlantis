@@ -61,8 +61,13 @@ public class Humain
      */
     public void devenirSoldat(int age)
     {
-        this.age = age;
-        this.fonction = "Soldat";
+    	if(age>=18) {
+	        this.age = age;
+	        this.fonction = "Soldat";
+    	}
+    	else if (age >= 0) {
+    		this.age = age;
+    	}
     }
     
     public int getAge()
