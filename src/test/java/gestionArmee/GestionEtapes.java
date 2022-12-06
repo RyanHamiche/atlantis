@@ -2,7 +2,7 @@ package gestionArmee;
 
 import org.junit.Assert;
 
-import Armee.Humain;
+import Armee.Mahr;
 import Armee.Monture;
 import Armee.Regiment;
 import cucumber.api.java.en.Given;
@@ -10,7 +10,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class GestionEtapes {
-	private Humain h1 = new Humain();
+	private Mahr h1 = new Mahr();
 	private Regiment r1 = new Regiment("Unite Un");
 	private Regiment r2 = new Regiment("Unite Deux");
 	private Monture m1 = new Monture("Cheval");
@@ -29,7 +29,7 @@ public class GestionEtapes {
 
 	@Then("un Regiment lui est assigne")
 	public void un_Regiment_lui_est_assigne() {
-	    h1.setRegiment(r1);
+	    h1.rejoindre(r1);
 	    Assert.assertTrue(r1.getTroupe().contains(h1));
 	}
 

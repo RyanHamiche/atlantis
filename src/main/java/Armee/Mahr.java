@@ -6,7 +6,7 @@ package Armee;
  * @author Mohamed IRAZZI feat. Ryan HAMICHE
  * @version 0.0.1
  */
-public class Humain
+public class Mahr
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int age;
@@ -17,7 +17,7 @@ public class Humain
 	/**
      * Constructeur d'objets de classe Humain
      */
-    public Humain()
+    public Mahr()
     {
         // initialisation des variables d'instance
         this.age = 0;
@@ -28,7 +28,7 @@ public class Humain
 		return this.regiment;
 	}
 
-	public void setRegiment(Regiment regiment) {
+	protected void setRegiment(Regiment regiment) {
 		this.regiment = regiment;
 	}
 

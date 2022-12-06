@@ -1,18 +1,16 @@
-package Essais;
-
+package shiganshinaTest;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
-import Armee.Mahr;
-import Armee.Monture;
-import Armee.Regiment;
+import shiganshina.Eldien;
+import shiganshina.Titan;
 
 /**
- * Classe-test HumainTest.
+ * Classe-test HumainTitanTest.
  *
  * @author  (votre nom)
  * @version (un numéro de version ou une date)
@@ -35,22 +33,20 @@ import Armee.Regiment;
  * qui réalise les engagements, et suivi d'un appel à tearDown(), qui les
  * détruit.
  */
-public class HumainTest
+public class HumainTitanTest
 {
     // Définissez ici les variables d'instance nécessaires à vos engagements;
     // Vous pouvez également les saisir automatiquement du présentoir
     // à l'aide du menu contextuel "Présentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
     // du présentoir (les objets sans constructeur, comme int, float, etc.).
-	private Mahr guerrier = new Mahr();
-	private Mahr chevalier = new Mahr();
-	private Monture cheval = new Monture("Cheval");
-	private Regiment unite1 = new Regiment("Unite Un");
-	private Regiment unite2 = new Regiment("Unite Deux");
+    protected Titan t;
+    protected Eldien h;
+
     /**
-     * Constructeur de la classe-test HumainTest
+     * Constructeur de la classe-test HumainTitanTest
      */
-    public HumainTest()
+    public HumainTitanTest()
     {
     }
 
@@ -62,11 +58,16 @@ public class HumainTest
     @BeforeEach
     public void setUp() // throws java.lang.Exception
     {
-        guerrier.devenirSoldat(18);
-        chevalier.devenirSoldat(20);
-        chevalier.setCompagnon(cheval);
-        chevalier.rejoindre(unite1);
-        unite2.ajouter(guerrier);
+        // Initialisez ici vos engagements
+        this.t= new Titan(12.5, 7);
+        this.h= new Eldien("Genevieve", "Dupont");
+        this.h.ajouterFuturTitan(this.t);
+    }
+    
+    @Test
+    public void checkHumanTitan()
+    {
+        assertTrue(h.getTailleFuturTitan().contains(12.5));
     }
 
     /**
@@ -78,44 +79,5 @@ public class HumainTest
     public void tearDown() // throws java.lang.Exception
     {
         //Libérez ici les ressources engagées par setUp()
-    }
-    
-    @Test
-    public void verifierSoldat()
-    {
-        assertEquals(guerrier.getFonction(),"Soldat");
-    }
-    
-    @Test
-    public void testerMonture()
-    {
-        
-        assertEquals(chevalier.getMonture().getRace(),"Cheval");
-        assertEquals(cheval.getProprietaire().getFonction(),"Soldat");
-        
-    }
-    
-    @Test
-    public void testerRegiment()
-    {        
-        assertEquals(chevalier.getRegiment().getNom(),"Unite Un");
-        assertTrue(unite2.getTroupe().contains(guerrier));
-        
-        guerrier.rejoindre(unite1);
-        
-        assertTrue(unite1.getTroupe().contains(guerrier));
-        assertFalse(unite2.getTroupe().contains(guerrier));
-        assertEquals(guerrier.getRegiment().getNom(),"Unite Un");
-        
-        unite2.expulser(chevalier);
-        assertEquals(chevalier.getRegiment().getNom(),"Unite Un");
-        unite1.expulser(chevalier);
-        assertFalse(unite1.getTroupe().contains(chevalier));
-        assertEquals(chevalier.getRegiment(),null);
-        
-        guerrier.quitterRegiment();
-        assertFalse(unite1.getTroupe().contains(guerrier));
-        assertEquals(guerrier.getRegiment(),null);
-        
     }
 }

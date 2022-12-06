@@ -1,18 +1,19 @@
-package Essais;
+package shiganshinaTest;
 
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
-import Armee.Mahr;
-import Armee.Monture;
-import Armee.Regiment;
+import shiganshina.*;
 
 /**
- * Classe-test HumainTest.
+ * Classe-test TitanTest.
  *
  * @author  (votre nom)
  * @version (un numéro de version ou une date)
@@ -35,22 +36,20 @@ import Armee.Regiment;
  * qui réalise les engagements, et suivi d'un appel à tearDown(), qui les
  * détruit.
  */
-public class HumainTest
+public class TitanTest
 {
     // Définissez ici les variables d'instance nécessaires à vos engagements;
     // Vous pouvez également les saisir automatiquement du présentoir
     // à l'aide du menu contextuel "Présentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
     // du présentoir (les objets sans constructeur, comme int, float, etc.).
-	private Mahr guerrier = new Mahr();
-	private Mahr chevalier = new Mahr();
-	private Monture cheval = new Monture("Cheval");
-	private Regiment unite1 = new Regiment("Unite Un");
-	private Regiment unite2 = new Regiment("Unite Deux");
+    protected double fValeur1;
+    protected double fValeur2;
+
     /**
-     * Constructeur de la classe-test HumainTest
+     * Constructeur de la classe-test TitanTest
      */
-    public HumainTest()
+    public TitanTest()
     {
     }
 
@@ -62,11 +61,9 @@ public class HumainTest
     @BeforeEach
     public void setUp() // throws java.lang.Exception
     {
-        guerrier.devenirSoldat(18);
-        chevalier.devenirSoldat(20);
-        chevalier.setCompagnon(cheval);
-        chevalier.rejoindre(unite1);
-        unite2.ajouter(guerrier);
+        // Initialisez ici vos engagements
+        fValeur1= 2.0;
+        fValeur2= 3.0;
     }
 
     /**
@@ -79,43 +76,69 @@ public class HumainTest
     {
         //Libérez ici les ressources engagées par setUp()
     }
-    
+
     @Test
-    public void verifierSoldat()
+    public void testTitan()
     {
-        assertEquals(guerrier.getFonction(),"Soldat");
+        Titan t1 = new Titan(17.5, 6);
+        assertEquals(17.5, t1.getTaille());
+        assertEquals(6, t1.getAge());
     }
     
     @Test
-    public void testerMonture()
+    public void testModificationSurTitan()
     {
-        
-        assertEquals(chevalier.getMonture().getRace(),"Cheval");
-        assertEquals(cheval.getProprietaire().getFonction(),"Soldat");
-        
+        Titan t2=new Titan(17.5, 6);
+        t2.setTaille(15);
+        t2.setAge(8);
+        assertEquals(15, t2.getTaille());
+        assertEquals(8, t2.getAge());
     }
     
     @Test
-    public void testerRegiment()
-    {        
-        assertEquals(chevalier.getRegiment().getNom(),"Unite Un");
-        assertTrue(unite2.getTroupe().contains(guerrier));
-        
-        guerrier.rejoindre(unite1);
-        
-        assertTrue(unite1.getTroupe().contains(guerrier));
-        assertFalse(unite2.getTroupe().contains(guerrier));
-        assertEquals(guerrier.getRegiment().getNom(),"Unite Un");
-        
-        unite2.expulser(chevalier);
-        assertEquals(chevalier.getRegiment().getNom(),"Unite Un");
-        unite1.expulser(chevalier);
-        assertFalse(unite1.getTroupe().contains(chevalier));
-        assertEquals(chevalier.getRegiment(),null);
-        
-        guerrier.quitterRegiment();
-        assertFalse(unite1.getTroupe().contains(guerrier));
-        assertEquals(guerrier.getRegiment(),null);
-        
+    public void testAjoutTitan() 
+    {
+    	Eldien h1 = new Eldien();
+    	Titan t1 = new Titan();
+    	Titan t2 = new Titan();
+    	
+    	h1.ajouterFuturTitan(t1);
+    	t1.setPorteur(h1);
+    	
+    	//assertEquals(t1.getHumain(), h1);
+    	assertTrue(h1.getTitan().contains(t1));
+    	assertNotEquals(t2.getHumain(), h1);
+    	assertFalse(h1.getTitan().contains(t2));
+    }
+    
+    @Test
+    public void testMultiTitan()
+    {
+    	Eldien h1=new Eldien("JAEGER", "Eren");
+    	
+    	ArrayList<Titan> lt1=new ArrayList<Titan>();
+    	Titan t1=new Titan(12.5,5);
+    	lt1.add(t1);
+    	Titan t2=new Titan(50,3);
+    	lt1.add(t2);
+    	Titan t3=new Titan(25,8);
+    	lt1.add(t3);
+    	
+    	
+    	h1.ajouterFuturTitan(t1);
+    	h1.ajouterFuturTitan(t2);
+    	h1.ajouterFuturTitan(t3);
+    	
+    	List<Titan> lt2=h1.getTitan();
+    	for(int i=0; i<lt1.size(); i++) {
+    		assertEquals(lt1.get(i).getAge(),lt2.get(i).getAge());
+    	}
+    	
+    	List<Double> ld1=h1.getTailleFuturTitan();
+    	
+    	for(int i=0; i<ld1.size(); i++) {
+    		assertEquals(ld1.get(i), lt1.get(i).getTaille());
+    	}
     }
 }
+
