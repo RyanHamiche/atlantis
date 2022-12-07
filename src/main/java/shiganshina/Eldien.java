@@ -2,7 +2,8 @@ package shiganshina;
 
 import java.util.ArrayList;
 import java.util.List;
-import Armee.Mahr;
+
+import Armee.Humain;
 
 /**
  * Décrivez votre classe Humain ici.
@@ -10,7 +11,7 @@ import Armee.Mahr;
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Eldien extends Mahr
+public class Eldien extends Humain
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private String nom;

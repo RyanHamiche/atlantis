@@ -2,6 +2,7 @@ package gestionArmee;
 
 import org.junit.Assert;
 
+import Armee.Humain;
 import Armee.Mahr;
 import Armee.Monture;
 import Armee.Regiment;
@@ -10,7 +11,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class GestionEtapes {
-	private Mahr h1 = new Mahr();
+	private Humain h1 = new Humain();
 	private Regiment r1 = new Regiment("Unite Un");
 	private Regiment r2 = new Regiment("Unite Deux");
 	private Monture m1 = new Monture("Cheval");

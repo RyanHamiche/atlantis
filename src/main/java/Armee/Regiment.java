@@ -5,27 +5,27 @@ import java.util.ArrayList;
 public class Regiment {
 
 	private String nom;
-	private ArrayList<Mahr> troupe;
+	private ArrayList<Humain> troupe;
 	
     public Regiment(String nom)
     {
         // initialisation des variables d'instance
         this.nom = nom;
-        troupe = new ArrayList<Mahr>();
+        troupe = new ArrayList<Humain>();
     }
 
-	public ArrayList<Mahr> getTroupe() {
+	public ArrayList<Humain> getTroupe() {
 		return this.troupe;
 	}
 	
-	public void expulser(Mahr soldat) {
-		if(troupe.contains(soldat)) soldat.quitterRegiment();
+	public void expulser(Humain humain) {
+		if(troupe.contains(humain)) humain.quitterRegiment();
 		else {
-			System.out.println("Le " + soldat.getFonction() + " ne fait pas partie du régiment " + this.nom);
+			System.out.println("Le " + humain.getFonction() + " ne fait pas partie du régiment " + this.nom);
 		}
 	}
     
-	public void ajouter(Mahr recrue) {
+	public void ajouter(Humain recrue) {
 		varNonNull(recrue);
 		if(!troupe.contains(recrue)) {
 			if (recrue.getRegiment()!=null)recrue.getRegiment().expulser(recrue);
