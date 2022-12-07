@@ -4,7 +4,6 @@ public abstract class Humain {
 	   // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int age;
     private String fonction;
-    private Monture monture;
     private Regiment regiment;
     
 	/**

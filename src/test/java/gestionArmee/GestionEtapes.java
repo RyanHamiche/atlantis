@@ -2,7 +2,6 @@ package gestionArmee;
 
 import org.junit.Assert;
 
-import Armee.Humain;
 import Armee.Mahr;
 import Armee.Monture;
 import Armee.Regiment;
