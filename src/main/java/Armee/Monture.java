@@ -36,11 +36,11 @@ public class Monture
      *
      * @param  humain L'humain qui sera le proprietaire de cette monture
      */
-    public void setProprietaire(Humain humain)
+    public void setProprietaire(Mahr mahr)
     {
-        this.proprietaire = humain;
-        if(!this.equals(humain.getMonture())){
-            humain.setCompagnon(this);
+        this.proprietaire = mahr;
+        if(!this.equals(mahr.getMonture())){
+        	mahr.setCompagnon(this);
         }
     }
 }

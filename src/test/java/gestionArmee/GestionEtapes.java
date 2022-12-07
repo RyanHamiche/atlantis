@@ -11,7 +11,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class GestionEtapes {
-	private Humain h1 = new Humain();
+	private Mahr h1 = new Mahr();
 	private Regiment r1 = new Regiment("Unite Un");
 	private Regiment r2 = new Regiment("Unite Deux");
 	private Monture m1 = new Monture("Cheval");

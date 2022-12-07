@@ -35,7 +35,7 @@ public abstract class Humain {
 		}
 	}
 
-	private void varNonNull(Object obj) {
+	protected void varNonNull(Object obj) {
 		if(obj==null) {
 			throw new NullPointerException();
 		}
@@ -71,21 +71,5 @@ public abstract class Humain {
     public String getFonction(){
         return this.fonction;
     }
-    
-    public Monture getMonture(){
-        return this.monture;
-    }
-    /**
-     * Designez l'unique compagnon de cet humain.
-     *
-     * @param  proprio L'humain qui sera le proprietaire de cette monture
-     */
-    public void setCompagnon(Monture animal)
-    {
-    	varNonNull(animal);
-        this.monture = animal;
-        if(!this.equals(animal.getProprietaire())){
-            animal.setProprietaire(this);
-        }
-    }
+   
 }
