@@ -107,7 +107,7 @@ public class TitanTest
     	
     	//assertEquals(t1.getHumain(), h1);
     	assertTrue(h1.getTitan().contains(t1));
-    	assertNotEquals(t2.getHumain(), h1);
+    	assertNotEquals(t2.getEldien(), h1);
     	assertFalse(h1.getTitan().contains(t2));
     }
     

@@ -58,7 +58,7 @@ public class Titan
         return this.age;
     }
     
-    public Eldien getHumain()
+    public Eldien getEldien()
     {
     	return this.porteur;
     }

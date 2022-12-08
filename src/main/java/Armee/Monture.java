@@ -10,7 +10,7 @@ public class Monture
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private String race;
-    private Humain proprietaire;
+    private Mahr proprietaire;
 
     /**
      * Constructeur d'objets de classe Monture
@@ -27,14 +27,14 @@ public class Monture
         return this.race;
     }
     
-    public Humain getProprietaire()
+    public Mahr getProprietaire()
     {
         return this.proprietaire;
     }
     /**
      * Designez l'unique propriétaire de cette monture.
      *
-     * @param  humain L'humain qui sera le proprietaire de cette monture
+     * @param  mahr Le mahr qui sera le proprietaire de cette monture
      */
     public void setProprietaire(Mahr mahr)
     {
