@@ -5,13 +5,29 @@ public abstract class Humain {
     private int age;
     private String fonction;
     private Regiment regiment;
+    private String nom;
+    private String prenom;
     
 	/**
      * Constructeur d'objets de classe Humain
      */
+    public Humain(String nom, String prenom)
+    {
+    	if(nom==null || prenom==null)
+    	{
+    		throw new IllegalArgumentException("Veuillez vérifier les paramètres");
+    	}
+        // initialisation des variables d'instance
+        this.nom=nom;
+        this.prenom=prenom;
+        this.age = 0;
+        this.fonction = "Aucun";
+    }
+    
     public Humain()
     {
-        // initialisation des variables d'instance
+        this.nom="John";
+        this.prenom="Doe";
         this.age = 0;
         this.fonction = "Aucun";
     }
@@ -70,5 +86,17 @@ public abstract class Humain {
     public String getFonction(){
         return this.fonction;
     }
+    
+    public String getNom()
+    {	
+        return this.nom;
+    }
+    
+    public String getPrenom()
+    {
+        return this.prenom;
+    }
    
 }
+
+

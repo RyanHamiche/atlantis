@@ -14,8 +14,6 @@ import Armee.Humain;
 public class Eldien extends Humain
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private String nom;
-    private String prenom;
     private List<Titan> listeTitan;
 
     /**
@@ -23,21 +21,13 @@ public class Eldien extends Humain
      */
     public Eldien(String nom, String prenom)
     {
-    	if(nom==null || prenom==null)
-    	{
-    		throw new IllegalArgumentException("Veuillez vérifier les paramètres");
-    	}
-        // initialisation des variables d'instance
-        this.nom=nom;
-        this.prenom=prenom;
+    	super(nom,prenom);
         this.listeTitan=new ArrayList<Titan>();
     }
     
     public Eldien()
     {
-        // initialisation des variables d'instance
-        this.nom="Doe";
-        this.prenom="John";
+        super();
         this.listeTitan=new ArrayList<Titan>();
     }
     
@@ -49,16 +39,6 @@ public class Eldien extends Humain
     public List<Titan> getTitan()
     {
         return listeTitan;
-    }
-    
-    public String getNom()
-    {	
-        return this.nom;
-    }
-    
-    public String getPrenom()
-    {
-        return this.prenom;
     }
     
     public List<Double> getTailleFuturTitan()

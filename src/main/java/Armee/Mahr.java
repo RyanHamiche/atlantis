@@ -10,9 +10,15 @@ public class Mahr extends Humain
 {
 	private Monture monture;
 	
-	public Mahr() {
-		super();
-	}
+    public Mahr(String nom, String prenom)
+    {
+    	super(nom,prenom);
+    }
+    
+    public Mahr()
+    {
+        super();
+    }
 	
     public Monture getMonture(){
         return this.monture;

@@ -18,3 +18,4 @@ Feature: US_001 Les eldiens peuvent faire partie des régiments
   Given un eldien veut changer de Regiment
   When  son Regiment n existe plus ou si il se fait transférer
   Then  un autre Regiment lui est assigné
+  
