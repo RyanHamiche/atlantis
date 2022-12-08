@@ -3,7 +3,7 @@
 #Author: Ryan HAMICHE
 #Author: Mohamed IRAZZI
 
-Feature: US_001 Les eldiens peuvent faire partie des régiments
+Feature: US_003 Les eldiens peuvent faire partie des régiments
 
 	En tant qu’eldien,
 	Je veux pouvoir rejoindre un régiment au côté de mahr

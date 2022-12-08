@@ -1,7 +1,7 @@
 #Author: Firas BARBOUCH
 #Author: Yanis LAGHMOURI
 
-Feature: Les titans peuvent avoir des interactions entre eux
+Feature: US_007 Les titans peuvent avoir des interactions entre eux
 
  Les titans peuvent s'attaquer entre eux et altérer les points de vie d'un autre 
 
