@@ -16,10 +16,10 @@ public class LiaisonTest {
 
 	@Given("un Humain est propriétaire d'un ou plusieurs titan")
 	public void un_Humain_est_propriétaire_d_un_ou_plusieurs_titan() {
-	    this.h1=new Eldien("Eren", "JAEGER");
-	    this.h2=new Eldien("Erwin", "SMITH");
-	    this.t1=new Titan(20,5);
-	    this.t2=new Titan(15,8);	
+	    this.h1 = new Eldien("Eren", "JAEGER");
+	    this.h2 = new Eldien("Erwin", "SMITH");
+	    this.t1 = new Titan(20,5);
+	    this.t2 = new Titan(15,8);	
 	}
 
 	@When("un humain veut se lier à un titan")
@@ -36,10 +36,10 @@ public class LiaisonTest {
 
 	@Given("un Humain ne peut pas posséder deux fois le même titan")
 	public void un_Humain_ne_peut_pas_posséder_deux_foi_le_même_titan() {
-	    this.h1=new Eldien("Eren", "JAEGER");
-	    this.h2=new Eldien("Erwin", "SMITH");
-	    this.t1=new Titan(20,5);
-	    this.t2=new Titan(15,8);
+	    this.h1 = new Eldien("Eren", "JAEGER");
+	    this.h2 = new Eldien("Erwin", "SMITH");
+	    this.t1 = new Titan(20,5);
+	    this.t2 = new Titan(15,8);
 	}
 
 	@When("un humain veut se lier une deuxième fois avec un titan")
@@ -51,9 +51,9 @@ public class LiaisonTest {
 
 	@Then("le titan et l'humain ne seront pas liés une deuxième fois")
 	public void le_titan_et_l_humain_ne_seront_pas_liés_une_deuxième_fois() {
-		int idx=0;
-	    for(int i=0; i<h1.getTitan().size(); i++) {
-	    	if(h1.getTitan().get(i)==t1)
+		int idx = 0;
+	    for(int i = 0; i < h1.getTitan().size(); i++) {
+	    	if(h1.getTitan().get(i) == t1)
 	    		idx++;
 	    }
 	    assertEquals(2, idx);

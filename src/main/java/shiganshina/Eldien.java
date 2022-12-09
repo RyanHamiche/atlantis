@@ -22,13 +22,13 @@ public class Eldien extends Humain
     public Eldien(String nom, String prenom)
     {
     	super(nom,prenom);
-        this.listeTitan=new ArrayList<Titan>();
+        this.listeTitan = new ArrayList<Titan>();
     }
     
     public Eldien()
     {
         super();
-        this.listeTitan=new ArrayList<Titan>();
+        this.listeTitan = new ArrayList<Titan>();
     }
     
     public void ajouterFuturTitan(Titan t)
@@ -49,7 +49,7 @@ public class Eldien extends Humain
     }
 
 	private void creerListeTailleTitan(ArrayList<Double> idx) {
-		for(int i=0; i<listeTitan.size(); i++) {
+		for(int i = 0; i < listeTitan.size(); i++) {
     		idx.add((double) listeTitan.get(i).getTaille());
     	}
 	}

@@ -21,15 +21,15 @@ public class IntegrationEldiens {
 
 	@When("Lorsqu il rejoint un régiment")
 	public void lorsqu_il_rejoint_un_régiment() {
-		Assert.assertTrue(r1!=null);
-		Assert.assertTrue(e1.getRegiment()==null);
+		Assert.assertTrue(r1 != null);
+		Assert.assertTrue(e1.getRegiment() == null);
 	}
 
 	@Then("Il peut partir sur le champ de bataille aux cotes de Mahrs")
 	public void il_peut_partir_sur_le_champ_de_bataille_aux_cotes_de_Mahrs() {
 	    e1.rejoindre(r1);
 	    
-	    Assert.assertTrue(m1!=null);
+	    Assert.assertTrue(m1 != null);
 	    m1.rejoindre(r1);
 	    
 	    Assert.assertTrue(r1.getTroupe().contains(e1));
@@ -39,12 +39,12 @@ public class IntegrationEldiens {
 	@Given("un eldien veut changer de Regiment")
 	public void un_eldien_veut_changer_de_Regiment() {
 		r1.ajouter(e1);
-		Assert.assertTrue(e1.getRegiment()!=null);
+		Assert.assertTrue(e1.getRegiment() != null);
 	}
 
 	@When("son Regiment n existe plus ou si il se fait transférer")
 	public void son_Regiment_n_existe_plus_ou_si_il_se_fait_transférer() {
-		Assert.assertTrue(r1!=null);
+		Assert.assertTrue(r1 != null);
 	}
 
 	@Then("un autre Regiment lui est assigné")

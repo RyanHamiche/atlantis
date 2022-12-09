@@ -59,8 +59,8 @@ public class HumainTitanTest
     public void setUp() // throws java.lang.Exception
     {
         // Initialisez ici vos engagements
-        this.t= new Titan(12.5, 7);
-        this.h= new Eldien("Genevieve", "Dupont");
+        this.t = new Titan(12.5, 7);
+        this.h = new Eldien("Genevieve", "Dupont");
         this.h.ajouterFuturTitan(this.t);
     }
     

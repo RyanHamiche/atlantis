@@ -13,7 +13,7 @@ public abstract class Humain {
      */
     public Humain(String nom, String prenom)
     {
-    	if(nom==null || prenom==null)
+    	if(nom == null || prenom == null)
     	{
     		throw new IllegalArgumentException("Veuillez vérifier les paramètres");
     	}
@@ -43,7 +43,7 @@ public abstract class Humain {
 	public void rejoindre(Regiment nouvRegiment) {
 		varNonNull(nouvRegiment);
 		if(!nouvRegiment.getTroupe().contains(this)) {
-			if(this.regiment!=null) this.regiment.expulser(this);
+			if(this.regiment != null) this.regiment.expulser(this);
 			this.setRegiment(nouvRegiment);
 			this.regiment.getTroupe().add(this);
 			
@@ -51,7 +51,7 @@ public abstract class Humain {
 	}
 
 	protected void varNonNull(Object obj) {
-		if(obj==null) {
+		if(obj == null) {
 			throw new NullPointerException();
 		}
 	}
@@ -69,7 +69,7 @@ public abstract class Humain {
      */
     public void devenirSoldat(int age)
     {
-    	if(age>=18) {
+    	if(age >= 18) {
 	        this.age = age;
 	        this.fonction = "Soldat";
     	}

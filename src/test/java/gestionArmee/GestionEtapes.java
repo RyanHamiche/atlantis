@@ -18,13 +18,13 @@ public class GestionEtapes {
 	
 	@Given("un Humain veut partir à la guerre")
 	public void un_Humain_veut_partir_à_la_guerre() {
-		Assert.assertTrue(h1!=null);
+		Assert.assertTrue(h1 != null);
 	}
 
 	@When("lorsqu il ne fait pas partie d un Regiment")
 	public void lorsqu_il_ne_fait_pas_partie_d_un_Regiment() {
-		Assert.assertTrue(r1!=null);
-		Assert.assertTrue(h1.getRegiment()==null);
+		Assert.assertTrue(r1 != null);
+		Assert.assertTrue(h1.getRegiment() == null);
 	}
 
 	@Then("un Regiment lui est assigne")
@@ -36,12 +36,12 @@ public class GestionEtapes {
 	@Given("un Humain veut changer de Regiment")
 	public void un_Humain_veut_changer_de_Regiment() {
 		r1.ajouter(h1);
-		Assert.assertTrue(h1.getRegiment()!=null);
+		Assert.assertTrue(h1.getRegiment() != null);
 	}
 
 	@When("son Regiment n existe plus ou si il se fait transférer")
 	public void son_Regiment_n_existe_plus_ou_si_il_se_fait_transférer() {
-		Assert.assertTrue(r1!=null);
+		Assert.assertTrue(r1 != null);
 	}
 
 	@Then("un autre Regiment lui est assigné")
@@ -53,30 +53,30 @@ public class GestionEtapes {
 
 	@Given("un Humain veut partir a la guerre")
 	public void un_Humain_veut_partir_a_la_guerre() {
-		Assert.assertTrue(h1!=null);
+		Assert.assertTrue(h1 != null);
 	}
 
 	@When("il a besoin de mobilite")
 	public void il_a_besoin_de_mobilite() {
-		Assert.assertTrue(h1.getMonture()==null);
-		Assert.assertTrue(m1!=null);
+		Assert.assertTrue(h1.getMonture() == null);
+		Assert.assertTrue(m1 != null);
 	}
 
 	@Then("attribuer la Monture a l Humain")
 	public void attribuer_la_Monture_a_l_Humain() {
 	    m1.setProprietaire(h1);
-	    Assert.assertTrue(h1.getMonture()!=null);
+	    Assert.assertTrue(h1.getMonture() != null);
 	}
 
 	@Given("l armee appelle les Humains à devenir Soldat")
 	public void l_armee_appelle_les_Humains_à_devenir_Soldat() {
-		Assert.assertTrue(h1!=null);
+		Assert.assertTrue(h1 != null);
 	}
 
 	@When("un Humain atteint un {int} lui procurant la majorité")
 	public void un_Humain_atteint_un_lui_procurant_la_majorité(Integer int1) {
 		h1.devenirSoldat(int1); 
-		Assert.assertTrue(h1!=null);
+		Assert.assertTrue(h1 != null);
 	}
 	
 	@Then("il obtient la fonction Soldat de Soldat.")

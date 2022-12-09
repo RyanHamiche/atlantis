@@ -20,25 +20,25 @@ public class Titan
      */
     public Titan(double taille, int age)
     {
-    	if(taille==0 || age==0) {
+    	if(taille == 0 || age == 0) {
     		throw new IllegalArgumentException("Veuillez vérifier les paramètres");
     	}
     	
         // initialisation des variables d'instance
-        this.taille=taille;
-        this.age=age;
-        this.porteur=null;
-        this.dps=taille*2;
-        this.pv=age*taille;
+        this.taille = taille;
+        this.age = age;
+        this.porteur = null;
+        this.dps = taille*2;
+        this.pv = age*taille;
     }
     
     public Titan() 
     {
-    	this.taille=5;
-    	this.age=5;
-    	this.porteur=null;
-        this.dps=taille*2;
-        this.pv=age*taille;
+    	this.taille = 5;
+    	this.age = 5;
+    	this.porteur = null;
+        this.dps = taille*2;
+        this.pv = age*taille;
     }
 
     /**
@@ -65,21 +65,21 @@ public class Titan
     
     public void setTaille(double taille)
     {
-    	if(taille<=0)
+    	if(taille <= 0)
     		throw new IllegalArgumentException("Vérifier les paramètres");
-        this.taille=taille;
+        this.taille = taille;
     }
     
     public void setAge(int age)
     {
-    	if(age<=0)
+    	if(age <= 0)
     		throw new IllegalArgumentException("Vérifier les paramètres");
-        this.age=age;
+        this.age = age;
     }
     
     public void setPorteur(Eldien h) 
     {
-    	if(h==null)
+    	if(h == null)
     		throw new IllegalArgumentException("Vérifier les paramètres");
     	h.ajouterFuturTitan(this);
     }
@@ -91,10 +91,10 @@ public class Titan
     public void attaque(Titan t) 
     {
     	double idx = this.pv-t.getDps();
-    	if(idx<0) {
-    		idx=0;
+    	if(idx < 0) {
+    		idx = 0;
     	}
-    	this.pv=idx;
+    	this.pv = idx;
     }
     
     public double getPV() 

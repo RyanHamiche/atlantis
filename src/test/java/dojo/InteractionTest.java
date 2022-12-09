@@ -9,19 +9,19 @@ import shiganshina.*;
 
 public class InteractionTest {
 	
-	private Eldien h1=new Eldien("Eren", "JAEGER");
-	private Titan t1=new Titan(20,5);
-	private Eldien h2=new Eldien("Erwin", "SMITH");
-	private Titan t2=new Titan(15,8);
-	private Titan t3=new Titan(20,5);
+	private Eldien h1 = new Eldien("Eren", "JAEGER");
+	private Titan t1 = new Titan(20,5);
+	private Eldien h2 = new Eldien("Erwin", "SMITH");
+	private Titan t2 = new Titan(15,8);
+	private Titan t3 = new Titan(20,5);
 	
 	
 	@Given("Un titanA veut se battre contre un titanB")
 	public void un_titanA_veut_se_battre_contre_un_titanB() {
-	    this.h1=new Eldien("Eren", "JAEGER");
-	    this.h2=new Eldien("Erwin", "SMITH");
-	    this.t1=new Titan(20,5);
-	    this.t2=new Titan(15,8);		
+	    this.h1 = new Eldien("Eren", "JAEGER");
+	    this.h2 = new Eldien("Erwin", "SMITH");
+	    this.t1 = new Titan(20,5);
+	    this.t2 = new Titan(15,8);		
 	}
 
 	@When("Un titanA attaque un autre titanB")

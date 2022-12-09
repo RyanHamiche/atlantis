@@ -62,8 +62,8 @@ public class TitanTest
     public void setUp() // throws java.lang.Exception
     {
         // Initialisez ici vos engagements
-        fValeur1= 2.0;
-        fValeur2= 3.0;
+        fValeur1 = 2.0;
+        fValeur2 = 3.0;
     }
 
     /**
@@ -88,7 +88,7 @@ public class TitanTest
     @Test
     public void testModificationSurTitan()
     {
-        Titan t2=new Titan(17.5, 6);
+        Titan t2 = new Titan(17.5, 6);
         t2.setTaille(15);
         t2.setAge(8);
         assertEquals(15, t2.getTaille());
@@ -114,14 +114,14 @@ public class TitanTest
     @Test
     public void testMultiTitan()
     {
-    	Eldien h1=new Eldien("JAEGER", "Eren");
+    	Eldien h1 = new Eldien("JAEGER", "Eren");
     	
-    	ArrayList<Titan> lt1=new ArrayList<Titan>();
-    	Titan t1=new Titan(12.5,5);
+    	ArrayList<Titan> lt1 = new ArrayList<Titan>();
+    	Titan t1 = new Titan(12.5,5);
     	lt1.add(t1);
-    	Titan t2=new Titan(50,3);
+    	Titan t2 = new Titan(50,3);
     	lt1.add(t2);
-    	Titan t3=new Titan(25,8);
+    	Titan t3 = new Titan(25,8);
     	lt1.add(t3);
     	
     	
@@ -129,14 +129,14 @@ public class TitanTest
     	h1.ajouterFuturTitan(t2);
     	h1.ajouterFuturTitan(t3);
     	
-    	List<Titan> lt2=h1.getTitan();
-    	for(int i=0; i<lt1.size(); i++) {
+    	List<Titan> lt2 = h1.getTitan();
+    	for(int i = 0; i < lt1.size(); i++) {
     		assertEquals(lt1.get(i).getAge(),lt2.get(i).getAge());
     	}
     	
-    	List<Double> ld1=h1.getTailleFuturTitan();
+    	List<Double> ld1 = h1.getTailleFuturTitan();
     	
-    	for(int i=0; i<ld1.size(); i++) {
+    	for(int i = 0; i < ld1.size(); i++) {
     		assertEquals(ld1.get(i), lt1.get(i).getTaille());
     	}
     }
