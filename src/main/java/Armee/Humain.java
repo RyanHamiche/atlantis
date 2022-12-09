@@ -18,16 +18,16 @@ public abstract class Humain {
     		throw new IllegalArgumentException("Veuillez vérifier les paramètres");
     	}
         // initialisation des variables d'instance
-        this.nom=nom;
-        this.prenom=prenom;
+        this.nom = nom;
+        this.prenom = prenom;
         this.age = 0;
         this.fonction = "Aucun";
     }
     
     public Humain()
     {
-        this.nom="John";
-        this.prenom="Doe";
+        this.nom = "John";
+        this.prenom = "Doe";
         this.age = 0;
         this.fonction = "Aucun";
     }

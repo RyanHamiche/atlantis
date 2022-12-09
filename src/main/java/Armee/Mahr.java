@@ -12,7 +12,7 @@ public class Mahr extends Humain
 	
     public Mahr(String nom, String prenom)
     {
-    	super(nom,prenom);
+    	super(nom, prenom);
     }
     
     public Mahr()
