@@ -25,28 +25,29 @@ public class GestionEtapes {
 	public void lorsqu_il_ne_fait_pas_partie_d_un_Regiment() {
 		Assert.assertTrue(r1 != null);
 		Assert.assertTrue(h1.getRegiment() == null);
+		h1.rejoindre(r1);
 	}
 
 	@Then("un Regiment lui est assigne")
 	public void un_Regiment_lui_est_assigne() {
-	    h1.rejoindre(r1);
 	    Assert.assertTrue(r1.getTroupe().contains(h1));
 	}
 
 	@Given("un Humain veut changer de Regiment")
 	public void un_Humain_veut_changer_de_Regiment() {
-		r1.ajouter(h1);
+		h1.rejoindre(r1);
 		Assert.assertTrue(h1.getRegiment() != null);
 	}
 
 	@When("son Regiment n existe plus ou si il se fait transférer")
 	public void son_Regiment_n_existe_plus_ou_si_il_se_fait_transférer() {
+		r1.ajouter(h1);
 		Assert.assertTrue(r1 != null);
+		r2.ajouter(h1);
 	}
 
 	@Then("un autre Regiment lui est assigné")
 	public void un_autre_Regiment_lui_est_assigné() {
-	    r2.ajouter(h1);
 	    Assert.assertNotEquals(h1.getRegiment(),r1);
 	    Assert.assertEquals(h1.getRegiment(),r2);
 	}
@@ -60,11 +61,11 @@ public class GestionEtapes {
 	public void il_a_besoin_de_mobilite() {
 		Assert.assertTrue(h1.getMonture() == null);
 		Assert.assertTrue(m1 != null);
+		m1.setProprietaire(h1);
 	}
 
 	@Then("attribuer la Monture a l Humain")
 	public void attribuer_la_Monture_a_l_Humain() {
-	    m1.setProprietaire(h1);
 	    Assert.assertTrue(h1.getMonture() != null);
 	}
 
@@ -75,17 +76,12 @@ public class GestionEtapes {
 
 	@When("un Humain atteint un {int} lui procurant la majorité")
 	public void un_Humain_atteint_un_lui_procurant_la_majorité(Integer int1) {
-		h1.devenirSoldat(int1); 
+		h1.obtenirFonction(int1); 
 		Assert.assertTrue(h1 != null);
 	}
-	
-	@Then("il obtient la fonction Soldat de Soldat.")
-	public void il_obtient_la_fonction_Soldat_de_Soldat() {
-		Assert.assertEquals(h1.getFonction(),"Soldat");
-	}
 
-	@Then("il obtient la fonction Aucun de Soldat.")
-	public void il_obtient_la_fonction_Aucun_de_Soldat() {
-		Assert.assertEquals(h1.getFonction(),"Aucun");
+	@Then("il obtient une fonction {string} correspondant à son âge")
+	public void il_obtient_une_fonction_correspondant_à_son_âge(String string) {
+	    Assert.assertEquals(h1.getFonction(),string);
 	}
 }

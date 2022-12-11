@@ -16,22 +16,20 @@ public class IntegrationEldiens {
 	private Regiment r2 = new Regiment("Unite Deux");
 	@Given("Un eldien se prépare à la guerre")
 	public void un_eldien_se_prépare_à_la_guerre() {
-		Assert.assertTrue(e1!=null);
+		Assert.assertTrue(e1 != null);
 	}
 
 	@When("Lorsqu il rejoint un régiment")
 	public void lorsqu_il_rejoint_un_régiment() {
 		Assert.assertTrue(r1 != null);
 		Assert.assertTrue(e1.getRegiment() == null);
+	    e1.rejoindre(r1);
+	    Assert.assertTrue(m1 != null);
+	    m1.rejoindre(r1);
 	}
 
 	@Then("Il peut partir sur le champ de bataille aux cotes de Mahrs")
 	public void il_peut_partir_sur_le_champ_de_bataille_aux_cotes_de_Mahrs() {
-	    e1.rejoindre(r1);
-	    
-	    Assert.assertTrue(m1 != null);
-	    m1.rejoindre(r1);
-	    
 	    Assert.assertTrue(r1.getTroupe().contains(e1));
 	    Assert.assertTrue(r1.getTroupe().contains(m1));
 	}
@@ -45,11 +43,11 @@ public class IntegrationEldiens {
 	@When("son Regiment n existe plus ou si il se fait transférer")
 	public void son_Regiment_n_existe_plus_ou_si_il_se_fait_transférer() {
 		Assert.assertTrue(r1 != null);
+		r2.ajouter(e1);
 	}
 
 	@Then("un autre Regiment lui est assigné")
 	public void un_autre_Regiment_lui_est_assigné() {
-		r2.ajouter(e1);
 	    Assert.assertNotEquals(e1.getRegiment(),r1);
 	    Assert.assertEquals(e1.getRegiment(),r2);
 	}

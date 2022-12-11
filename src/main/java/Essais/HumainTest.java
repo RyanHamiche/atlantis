@@ -61,8 +61,8 @@ public class HumainTest
     @BeforeEach
     public void setUp() // throws java.lang.Exception
     {
-        guerrier.devenirSoldat(18);
-        chevalier.devenirSoldat(20);
+        guerrier.obtenirFonction(18);
+        chevalier.obtenirFonction(20);
         chevalier.setCompagnon(cheval);
         chevalier.rejoindre(unite1);
         unite2.ajouter(guerrier);

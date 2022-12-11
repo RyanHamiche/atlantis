@@ -67,9 +67,36 @@ public abstract class Humain {
      * @param  y   le paramètre de la méthode
      * @return     la somme de x et de y
      */
-    public void devenirSoldat(int age)
+    public void obtenirFonction(int age, String fct)
     {
     	if(age >= 18) {
+	        this.age = age;
+	        this.fonction = fct;
+    	}
+    	else if (age >= 0) {
+    		this.age = age;
+    	}
+    }
+    
+    public void obtenirFonction(int age)
+    {
+    	if(age >= 40) {
+	        this.age = age;
+	        this.fonction = "Senior";
+    	}
+    	else if(age >= 35) {
+	        this.age = age;
+	        this.fonction = "Vétéran";
+    	}
+    	else if(age >= 30) {
+	        this.age = age;
+	        this.fonction = "Officier";
+    	}
+    	else if(age >= 22) {
+	        this.age = age;
+	        this.fonction = "Chevalier";
+    	}
+    	else if(age >= 18) {
 	        this.age = age;
 	        this.fonction = "Soldat";
     	}

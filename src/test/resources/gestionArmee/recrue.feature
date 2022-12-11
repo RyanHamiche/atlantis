@@ -15,9 +15,13 @@ Feature: US_002 Recrutement des soldats
   Scenario Outline: Un humain atteint la majorité
   Given l armee appelle les Humains à devenir Soldat
   When  un Humain atteint un <age> lui procurant la majorité
-  Then  il obtient la fonction <fonction> de Soldat.
+  Then  il obtient une fonction <fct> correspondant à son âge
   
   Examples: 
-  | age			| fonction 	|
-  | 18 			| Soldat    |
-  | 15			| Aucun			|
+  | age			| fct 	|
+  | 18 			| "Soldat"    |
+  | 15			| "Aucun"			|
+  | 22			| "Chevalier"	|
+  | 32			| "Officier"	|
+  | 36			| "Vétéran"		|
+  | 48			|	"Senior"		|
